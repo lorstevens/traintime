@@ -8,12 +8,15 @@
 	    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 	    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
 	 <div class="container">
      	<div class="jumbotron">
         	<h1 class="text-center" id ="trainTitle" style="color:#49575e">Where's My Train?</h1>
-        	<img src= "./assets/images/railroad.jpg">
+        	<img src= "./assets/images/railroad_edit.jpg">
       	</div>
 
       <div class="row">
@@ -50,22 +53,23 @@
 
               <form>
                 <div class="form-group">
-                  <label for="name-input">Train Name</label>
+                  <label for="nameinput">Train Name</label>
                   <input class="form-control" id="name-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="where-input">Destination</label>
+                  <label for="whereinput">Destination</label>
                   <input class="form-control" id="where-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="time-input">First Train Time (HH:mm - military time)</label>
+                  <label for="timeinput">First Train Time (HH:mm - military time)</label>
                   <input class="form-control" id="time-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="frequency-input">Frequency</label>
+                  <label for="frequencyinput">Frequency</label>
                   <input class="form-control" id="frequency-input" type="text">
                 </div>
-                <button class="btn btn-primary" id="submit-btn" type="submit" style="color:#49575e; background-color: black">Submit</button>
+
+                <button class="btn btn-primary" id="submitTrain" type="submit" style="color:#49575e; background-color: black">Submit</button>
               </form>
 
             </div>
@@ -82,4 +86,5 @@
 
 
 </body>
+<script src="./assets/javascript/app.js"></script>
 </html>
