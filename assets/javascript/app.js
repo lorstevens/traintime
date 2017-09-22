@@ -1,3 +1,6 @@
+
+// Firebase API Key
+
 var config = {
     apiKey: "AIzaSyCcEpbcqJ7jLtvH_A4sS-Y9fYE7dwDz6bw",
     authDomain: "lornaproject-cbbec.firebaseapp.com",
@@ -12,22 +15,21 @@ var config = {
 
 
 
-  var trainName = "";
-  var trainWhere= "";
-  var trainTime = "";
 
+// click function 
 
   $('#submitTrain').on('click', function(e){
 
   e.preventDefault();
 
+// setting variable to the value of user input
  	var trainName = $("#name-input").val().trim();
 	var trainWhere = $("#where-input").val().trim();
   var trainTime = $("#time-input").val().trim();
   var trainF = $("#frequency-input").val().trim();
 
 
-
+// creating the object for the Firebase database
  var newTrain = {
     name: trainName,
     destination: trainWhere,
@@ -38,52 +40,55 @@ var config = {
   };
 
 
-     // return false;
+     // return false; (not needed here?)
+
+// pushing the newTrain object into the Firbase database
  	database.ref().push(newTrain);
+
+
+//clearing the input forrms after the user clicks submit
 
   $("#name-input").val("");
   $("#where-input").val("");
-  $("#first_time").val("");
+  $("#time-input").val("");
   $("#frequency-input").val("");
 
  	 });
 
 
 
-
+//setting the objec
 
   database.ref().on("child_added", function(childSnapshot) {
 
     var sv = childSnapshot.val();
 
-    // console.log(sv.name);
-    // console.log(sv.destination);
-    // console.log(sv.first_time);
-    // console.log(sv.frequency);
-
-
-    var trainFrequency = sv.frequency;
-
+//current time
     var currentTime = moment();
     console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
+//time first train leaves
     var startTime = moment (sv.first_time, "hh:mm");
-    console.log("please work" + moment(startTime).format("hh:mm"));
+    console.log("First Train Leaves at: " + moment(startTime).format("hh:mm"));
 
+//difference between current time and start time
     var diffTime = moment().diff(moment(startTime), "minutes");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
+    console.log("Difference in first train and current time: " + diffTime);
 
-    var remainder = diffTime % trainFrequency;
-    console.log(remainder);
+//renmainder of time difference and frequency 
+    var remainder = diffTime % sv.frequency;
+    console.log("remainder: " + remainder);
 
-    var trainMinutes = trainFrequency - remainder;
-    console.log("MINUTES TILL TRAIN: " + trainMinutes);
+//frequency minus remainder
+    var trainMinutes = sv.frequency - remainder;
+    console.log("Minutes until train: " + trainMinutes);
 
+//add trainMinutes to current time to figure out next train arrival time
     var nextTrain = moment().add(trainMinutes, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("H:mm"));
 
 
-
+//prepend the firebase onject to the HTML
         $(".table > tbody").prepend("<tr><td>" + sv.name + "</td><td>" + sv.destination + "</td><td>" +
   sv.frequency + "</td><td>" + moment(nextTrain).format("hh:mm") + "</td><td>" + trainMinutes + "</td><td>");
 
