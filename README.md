@@ -5,13 +5,16 @@ This page allows users to input the Train Name, Destination, first train time an
 I used the Firebase Database to set the user input and prepend it to the page. 
 
 **Current Train Schedule:**
+
 ![Alt text](./assets/images/screenshot2.png?raw=true "Optional Title")
 
 
-**Users can add new trains::**
+**Users can add new trains:**
+
 ![Alt text](./assets/images/screenshot3.png?raw=true "Optional Title")
 
 **Firebase Database- Existing/New trains:**
+
 ![Alt text](./assets/images/screenshot1.png?raw=true "Optional Title")
 
 - - - -
