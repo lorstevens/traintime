@@ -57,7 +57,7 @@ var config = {
 
 
 
-//setting the objec
+//setting the object
 
   database.ref().on("child_added", function(childSnapshot) {
 
