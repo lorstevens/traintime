@@ -9,10 +9,11 @@
 
 .heading{
 	font-family: 'Unkempt', cursive;
-	font-size: 50px;
+	font-size: 700%;
 	text-align: center;
 	padding: 5%;
 	color: #27AE60;
+	word-spacing: 2%;
 
 }
 
@@ -38,6 +39,9 @@
 	border-color: black;
 }
 
+form{
+	 font-family: 'Open Sans';
+}
 
 .table{
 	margin-bottom: 0px;
