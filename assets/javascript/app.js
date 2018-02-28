@@ -90,7 +90,7 @@ var config = {
 
 //prepend the firebase onject to the HTML
         $(".table > tbody").prepend("<tr><td>" + sv.name + "</td><td>" + sv.destination + "</td><td>" +
-  sv.frequency + "</td><td>" + moment(nextTrain).format("hh:mm") + "</td><td>" + trainMinutes + "</td><td>");
+  sv.frequency + "</td><td>" + moment(nextTrain).format("hh:mm") + "</td><td>" + trainMinutes);
 
         
 

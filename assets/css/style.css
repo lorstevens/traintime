@@ -2,14 +2,63 @@
 	font-family: 'Lobster', cursive;
 }
 
-.jumbotron {
-	background-color: black;
+.header-row {
+	background-image: url("../images/train2.jpg");
+	background-size: cover;
 }
 
-img {
-	width: 200px;
-	height: 200px;
-	display: block;
-	margin: auto;
+.heading{
+	font-family: 'Unkempt', cursive;
+	font-size: 50px;
+	text-align: center;
+	padding: 5%;
+	color: #27AE60;
 
+}
+
+.panel-title{
+	font-family: 'Unkempt', cursive;
+	text-align: center;
+}
+
+.panel-primary{
+	border-color: black;
+}
+
+.panel-primary>.panel-heading{
+	border-color: black;
+}
+
+.schedule{
+	padding: 0px;
+}
+
+.panel-body{
+	font-family: 'Open Sans', sans-serif;
+	border-color: black;
+}
+
+
+.table{
+	margin-bottom: 0px;
+}
+
+th{
+	font-weight: bold;
+	/*font-size: 15px;*/
+}
+
+footer{
+	background-color: #4F4F4F;
+	padding: 2%;
+	margin-top: 5%
+}
+
+a{
+	color: gray;
+}
+
+thead{
+	background-color: #F2F2F2;
+	text-align: center;
 }
